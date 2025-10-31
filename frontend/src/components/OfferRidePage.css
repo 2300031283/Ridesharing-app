@@ -1,0 +1,48 @@
+.offer-ride-page {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.offer-ride-page h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.offer-ride-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.offer-ride-form label {
+  font-weight: 600;
+}
+
+.offer-ride-form input,
+.offer-ride-form select {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.offer-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.offer-btn:hover {
+  background-color: #0056b3;
+}
