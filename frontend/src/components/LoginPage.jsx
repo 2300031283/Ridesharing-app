@@ -2,39 +2,38 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
 
-const SignupPage = () => {
+const LoginPage = () => {
   const navigate = useNavigate();
 
-  const handleSignup = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    // Example: Here you can add signup logic (API call, form validation, etc.)
-    localStorage.setItem("isAuthenticated", "true"); // Save login status
-    navigate("/home"); // Redirect to home page
+    // TODO: Add real authentication (API call, validation, error handling)
+    // On successful login redirect to HomePage1
+    navigate("/homepage1");
   };
 
   return (
     <div className="auth-container">
       <div className="auth-box">
-        <h2>Create an Account 🚗</h2>
-        <p className="auth-subtext">Join RideShare and start your journey today</p>
+        <h2>Welcome Back!</h2>
+        <p className="auth-subtext">Log in to continue to RideShare</p>
 
-        <form onSubmit={handleSignup}>
-          <input type="text" placeholder="Full Name" required />
+        <form onSubmit={handleLogin}>
           <input type="email" placeholder="Email" required />
           <input type="password" placeholder="Password" required />
           <button type="submit" className="auth-btn">
-            Sign Up
+            Log In
           </button>
         </form>
 
         <p className="auth-footer">
-          Already have an account?{" "}
-          <span onClick={() => navigate("/login")}>Log In</span>
+          Don't have an account?{" "}
+          <span onClick={() => navigate("/signup")}>Sign up</span>
         </p>
       </div>
     </div>
   );
 };
 
-export default SignupPage;
+export default LoginPage;

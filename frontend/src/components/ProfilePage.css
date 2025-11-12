@@ -1,0 +1,60 @@
+.profile-page {
+  background-color: #f7f9fc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  font-family: "Poppins", sans-serif;
+}
+
+.profile-container {
+  background-color: #fff;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.profile-name {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 25px;
+}
+
+.profile-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-options li {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.profile-options li:hover {
+  background-color: #f2f4f8;
+}
+
+.logout-option {
+  color: red;
+  font-weight: 500;
+}
+
+.close-account {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  color: gray;
+  cursor: pointer;
+}
+
+.close-account:hover {
+  text-decoration: underline;
+}

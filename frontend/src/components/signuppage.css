@@ -1,0 +1,97 @@
+.profile-page {
+  background-color: #f4f7fc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.profile-container {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 600px;
+}
+
+.profile-name {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 25px;
+}
+
+.profile-item {
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.2s ease-in-out;
+}
+
+.profile-header:hover {
+  color: #007bff;
+}
+
+.profile-content {
+  margin-top: 8px;
+  padding-left: 15px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.profile-content input,
+.profile-content select {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.profile-content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.profile-content button:hover {
+  background-color: #0056b3;
+}
+
+.logout-option span {
+  color: #e74c3c;
+}
+
+.logout-option span:hover {
+  color: #c0392b;
+}
+
+.close-account span {
+  color: #999;
+}
+
+.close-account span:hover {
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

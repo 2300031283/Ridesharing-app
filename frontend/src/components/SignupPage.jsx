@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Auth.css";
+import "./signuppage.css";
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const SignupPage = () => {
     e.preventDefault();
 
     // Here you can add your signup logic (API call, validation, etc.)
-    navigate("/home"); // Redirect to home page after signup
+    navigate("/login"); // Redirect to home page after signup
   };
 
   return (
