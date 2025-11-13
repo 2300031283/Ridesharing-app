@@ -1,11 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { User } from "lucide-react";
 import "./HomePage1.css";
 
 const HomePage1 = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [fromInput, setFromInput] = useState('');
+  const [toInput, setToInput] = useState('');
+  const [dateInput, setDateInput] = useState('');
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -48,7 +52,8 @@ const HomePage1 = () => {
                 <Link to="/inbox">Inbox</Link>
                 <Link to="/profile">Profile</Link>
                 <Link to="/transfers">Transfers</Link>
-                <Link to="/payments">Payments & Refunds</Link>
+                <Link to="/payments">Payments</Link>
+                <Link to="/refunds">Refunds</Link>
                 <button onClick={handleLogout} className="logout-btn">
                   Logout
                 </button>
@@ -65,10 +70,10 @@ const HomePage1 = () => {
           <p>Find your perfect carpool today.</p>
 
           <div className="search-box">
-            <input type="text" placeholder="From" className="search-input" />
-            <input type="text" placeholder="To" className="search-input" />
-            <input type="date" className="search-input date" />
-            <button className="search-btn">Search Ride</button>
+            <input type="text" placeholder="From" className="search-input" value={fromInput} onChange={e=>setFromInput(e.target.value)} />
+            <input type="text" placeholder="To" className="search-input" value={toInput} onChange={e=>setToInput(e.target.value)} />
+            <input type="date" className="search-input date" value={dateInput} onChange={e=>setDateInput(e.target.value)} />
+            <button className="search-btn" onClick={()=>{ const params = new URLSearchParams(); if(fromInput) params.set('from', fromInput); if(toInput) params.set('to', toInput); if(dateInput) params.set('date', dateInput); navigate(`/search-results?${params.toString()}`); }}>Search Ride</button>
           </div>
         </div>
       </section>

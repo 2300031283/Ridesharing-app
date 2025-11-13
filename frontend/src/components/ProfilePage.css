@@ -1,60 +1,354 @@
 .profile-page {
-  background-color: #f7f9fc;
+  background-color: #f0f4f8;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 100px;
+  padding: 2rem 1rem;
   font-family: "Poppins", sans-serif;
 }
 
 .profile-container {
   background-color: #fff;
-  width: 400px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.profile-name {
+.profile-title {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: #007bff;
-  margin-bottom: 25px;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
-.profile-options {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Success & Error Messages */
+.success-message {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #d4edda;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  color: #155724;
+  font-weight: bold;
+  text-align: center;
+  animation: slideDown 0.5s ease-in;
 }
 
-.profile-options li {
-  padding: 12px 10px;
-  border-bottom: 1px solid #eee;
+.error-message {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8d7da;
+  border: 2px solid #f5c6cb;
+  border-radius: 8px;
+  color: #721c24;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Profile Table Section */
+.profile-table-section {
+  margin-bottom: 2rem;
+}
+
+.profile-table-section h2 {
   color: #333;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 0.5rem;
 }
 
-.profile-options li:hover {
-  background-color: #f2f4f8;
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.profile-table thead {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+}
+
+.profile-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #007bff;
+}
+
+.profile-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.profile-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.profile-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.profile-table tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+.field-label {
+  font-weight: 600;
+  color: #555;
+  min-width: 150px;
+}
+
+.field-value {
+  color: #333;
+  word-break: break-word;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.action-cell {
+  text-align: center;
+  min-width: 150px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.edit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.save-btn:disabled {
+  background-color: #ccc;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+/* Accordion Section */
+.accordion-section {
+  margin-top: 3rem;
+}
+
+.accordion-section h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.profile-item {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-item:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.profile-header:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.profile-content {
+  padding: 1.5rem;
+  background-color: #fff;
+  animation: expandDown 0.3s ease-in;
+}
+
+.profile-content label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.profile-content select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.5rem;
+}
+
+.profile-content button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.profile-content button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
 .logout-option {
-  color: red;
-  font-weight: 500;
+  background-color: #fff3cd !important;
+}
+
+.logout-option .profile-header {
+  color: #d32f2f;
+  background: linear-gradient(135deg, #fff3cd 0%, #ffe8a1 100%);
+}
+
+.logout-option .profile-header:hover {
+  background: linear-gradient(135deg, #ffe8a1 0%, #ffd777 100%);
 }
 
 .close-account {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 15px;
-  color: gray;
-  cursor: pointer;
+  background-color: #f8d7da !important;
 }
 
-.close-account:hover {
-  text-decoration: underline;
+.close-account .profile-header {
+  color: #d32f2f;
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+}
+
+.close-account .profile-header:hover {
+  background: linear-gradient(135deg, #f5c6cb 0%, #f1b0b7 100%);
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1.5rem;
+  }
+
+  .profile-title {
+    font-size: 2rem;
+  }
+
+  .profile-table-section h2,
+  .accordion-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-table th,
+  .profile-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .edit-btn,
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+  }
 }

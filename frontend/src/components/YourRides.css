@@ -1,0 +1,106 @@
+.your-rides-page { padding:1rem }
+.bookings-list { display:flex; flex-direction:column; gap:0.8rem }
+.booking-card { padding:0.8rem; border-radius:8px; border:1px solid #eee; background:#fff }
+.booking-card > div { margin:0.3rem 0; }
+.booking-card strong { color:#333; }
+
+.message-btn {
+  margin-top:0.5rem;
+  padding:0.5rem 1rem;
+  background:#007bff;
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.message-btn:hover { background:#0056b3; }
+
+.chat-section {
+  margin-top:1rem;
+  padding:1rem;
+  background:#f8f9fa;
+  border-radius:6px;
+  border:1px solid #ddd;
+}
+
+.messages-container {
+  max-height:300px;
+  overflow-y:auto;
+  background:#fff;
+  padding:0.8rem;
+  border-radius:4px;
+  margin-bottom:0.8rem;
+  border:1px solid #eee;
+  min-height:100px;
+}
+
+.message {
+  margin:0.5rem 0;
+  padding:0.6rem;
+  background:#e3f2fd;
+  border-radius:4px;
+  border-left:3px solid #2196F3;
+}
+
+.message.driver {
+  background:#f3e5f5;
+  border-left-color:#9c27b0;
+}
+
+.message strong { color:#1976d2; }
+.message.driver strong { color:#7b1fa2; }
+
+.msg-time {
+  display:block;
+  font-size:0.75rem;
+  color:#666;
+  margin-top:0.3rem;
+}
+
+.no-messages {
+  text-align:center;
+  color:#999;
+  font-style:italic;
+  padding:1rem;
+}
+
+.message-input-container {
+  display:flex;
+  gap:0.5rem;
+}
+
+.message-input {
+  flex:1;
+  padding:0.6rem;
+  border:1px solid #ddd;
+  border-radius:4px;
+  font-family:Arial,sans-serif;
+  resize:vertical;
+  min-height:60px;
+}
+
+.message-input:focus {
+  outline:none;
+  border-color:#007bff;
+  box-shadow:0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.send-btn {
+  padding:0.6rem 1.2rem;
+  background:#28a745;
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:600;
+  align-self:flex-end;
+}
+
+.send-btn:hover:not(:disabled) { background:#218838; }
+
+.send-btn:disabled {
+  background:#ccc;
+  cursor:not-allowed;
+}
